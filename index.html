@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employee Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>HR Dashboard</h2>
+    <ul>
+        <li onclick="showDashboard()">Dashboard</li>
+        <li onclick="showEmployees()">Employees</li>
+        <li onclick="showDepartments()">Departments</li>
+    </ul>
+</div>
+
+<div class="main">
+
+    <header>
+        <h1 id="title">Employees Record</h1>
+        <p id="subtitle">With Complete Details</p>
+    </header>
+
+    <!-- DASHBOARD CARDS -->
+    <div class="cards" id="cards">
+
+        <div class="card">
+            <h3>Total Employees</h3>
+            <p id="totalEmp">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Active Employees</h3>
+            <p id="activeEmp">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Departments</h3>
+            <p id="totalDept">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Salary</h3>
+            <p id="totalSalary">0</p>
+        </div>
+
+    </div>
+
+    <!-- EMPLOYEE FORM -->
+    <div class="form" id="formBox">
+        <h2>Add Employee</h2>
+
+        <div class="grid">
+            <input id="name" placeholder="Full Name">
+            <input id="dob" type="date">
+
+            <select id="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <input id="department" placeholder="Department">
+            <input id="role" placeholder="Role">
+            <input id="salary" placeholder="Salary">
+            <input id="phone" placeholder="Phone">
+            <input id="email" placeholder="Email">
+            <input id="address" placeholder="Address">
+        </div>
+
+        <button onclick="addEmployee()">Add Employee</button>
+    </div>
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by Name, ID, Department or Role..."
+            onkeyup="searchEmployee()"
+        >
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="empTable"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2>Employee Details</h2>
+        <div id="details"></div>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
